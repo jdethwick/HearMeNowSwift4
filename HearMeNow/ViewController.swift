@@ -49,6 +49,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
             do {
                 try soundPlayer = AVAudioPlayer(contentsOf: url as URL)
                 soundPlayer?.delegate = self
+                soundPlayer?.enableRate = true
+                soundPlayer?.rate = 0.5
                 soundPlayer?.play()
             } catch {
                 print("Error initializing player \(error)")
